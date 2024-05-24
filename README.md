@@ -29,7 +29,8 @@ Welcome to Working Force this application is a command-line application designed
 - **Delete Employees, Roles, Departments**: Remove entries from the database.
 
 ### Demo
-![image](https://github.com/DRX-88/Working-Force/assets/162182740/7e21b016-0f54-4319-8fb7-cd66d1c8c4e6)
+![image](https://github.com/DRX-88/eShophify/assets/162182740/aa071320-0db9-4e20-a477-1dd9be32bbcd)
+
 
 ## Installation
 
