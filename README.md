@@ -3,15 +3,16 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Welcome to Working Force
-Welcome to Working Force this application is a command-line application designed to manage a company's employee database. It helps administrators keep track of employees, managers, departments, and roles by providing a series of prompts that guide the user through various tasks. This application is built using Node.js, Inquirer, and PostgreSQL.
+## Welcome to Shophify
+Welcome to Shophify, your ultimate inventory management solution!
+
+At Shophify, we are dedicated to helping you streamline your inventory processes, ensuring that you have the right products in the right place at the right time. Our platform offers a range of features designed to simplify inventory management, boost efficiency, and support the growth of your business.
 
 
 ## Table of Contents
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Database Schemas](#database-schema)
 - [Contributions](#contributions)
 - [Technologies](#technologies)
 - [Link](#link)
@@ -19,17 +20,10 @@ Welcome to Working Force this application is a command-line application designed
 - [License](#license)
 
 ## Features
-- **Add Employees**: Enter details to add new employees.
-- **View Employees**: Display a list of all employees.
-- **Update Employee Roles**: Change the role of an existing employee.
-- **Add Departments**: Enter details to add new departments.
-- **Add Roles**: Enter details to add new roles.
-- **View Departments**: Display a list of all departments.
-- **View Roles**: Display a list of all roles.
-- **Delete Employees, Roles, Departments**: Remove entries from the database.
-
-### Demo
-![image](https://github.com/DRX-88/eShophify/assets/162182740/aa071320-0db9-4e20-a477-1dd9be32bbcd)
+- Get all Categories, Products and Tags.
+- Create new Categories, Products and Tags.
+- Update Categories, Products and Tags.
+- Delete Categories, Products and Tags.
 
 
 ## Installation
@@ -46,21 +40,20 @@ Welcome to Working Force this application is a command-line application designed
     ```bash
     \i ./db/schema.sql
     ```
-4. Seed the database:
+4. Quit the postgres:
     ```bash
-    \i ./db/schema.sql
+    \q
     ```
-Make sure to also put in your Postgres username and password located in the server.js file on server.js:13:
+5. Make sure to also put in your Postgres username and password located in the .env.EXAMPLE file and rename the file to .env
 
-```javascript
-module.exports = {
-    user: 'your-username',
-    password: 'your-password',
-    host: 'localhost',
-    database: 'your-database-name',
-    port: 5432,
-};
-```
+    DB_NAME='ecommerce_db'
+    DB_USER=''
+    DB_PASSWORD=''
+
+6. Seed the database: 
+    ```bash
+    npm run seed
+    ```
 
 ## Usage
 
@@ -68,28 +61,11 @@ module.exports = {
     ```bash
     npm start
     ```
-2. Follow the prompts to interact with the employee tracker:
-    - Select an option from the main menu.
-    - Enter the required information when prompted.
+2. Open Insomnia
 
-## Database Schema
+Use the following as an example of requests:
 
-- **Departments Table**: Contains department details.
-    - `id`: SERIAL PRIMARY KEY
-    - `name`: VARCHAR(30)
-    
-- **Roles Table**: Contains role details.
-    - `id`: SERIAL PRIMARY KEY
-    - `title`: VARCHAR(30) 
-    - `salary`: DECIMAL L
-    - `department_id`: INTEGER REFERENCES department(id)
-
-- **Employees Table**: Contains employee details.
-    - `id`: SERIAL PRIMARY KEY
-    - `first_name`: VARCHAR(30) 
-    - `last_name`: VARCHAR(30) 
-    - `role_id`: INTEGER REFERENCES role(id)
-    - `manager_id`: INTEGER REFERENCES employee(id)
+![image](https://github.com/DRX-88/eShophify/assets/162182740/aa071320-0db9-4e20-a477-1dd9be32bbcd)
 
 ## Contributions
 
@@ -112,20 +88,20 @@ Contributions are welcome! Please follow these steps:
 
 ## Technologies
 
-- [Node.js](https://nodejs.org/)
-- [Inquirer](https://www.npmjs.com/package/inquirer)
+- [Express](https://expressjs.com/)
+- [Sequelize](https://sequelize.org/)
 - [PostgreSQL](https://www.postgresql.org/)
+- [Dotenv](https://www.npmjs.com/package/dotenv)
 
+## Links
+[Video Tutorial](https://drive.google.com/file/d/1WruPppQgBcUsrcQlPM03h4F8QnoLwUUP/view?usp=drive_link)
 
-## Link
-[Video Tutorial](https://drive.google.com/file/d/1RUb8weEsqIwiqhPTbYD8Q_BT7ZH31T5l/view?usp=drive_link)
-
-[Github Repo](https://github.com/DRX-88/Working-Force)
+[Github Repo](https://github.com/DRX-88/Shophify)
 
 ## Questions
 If you have any questions, you can reach me through the following:
-- GitHub: [DRX-88](https://github.com/yourusername)
-- Email: [nrm@gmail.com](mailto:youremail@example.com)
+- GitHub: [DRX-88](https://github.com/DRX-88)
+- Email: [nrm@gmail.com](mailto:nrmj02@gmail.com)
 
 ## License
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT)
